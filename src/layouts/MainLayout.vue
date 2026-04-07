@@ -144,6 +144,6 @@ const currentMotionState = computed(() => {
 }
 
 .content-area {
-  --uno: mt-14 box-border h-[calc(100vh-56px)] p-3;
+  --uno: mt-12 box-border h-[calc(100vh-56px)] p-3;
 }
 </style>

@@ -23,7 +23,7 @@ body,
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.45) transparent;
+  scrollbar-color: transparent transparent;
 }
 
 *::-webkit-scrollbar {
@@ -42,13 +42,22 @@ body,
 }
 
 *::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.45);
+  background: transparent;
   border-radius: 10px;
   border: 2px solid transparent;
   background-clip: padding-box;
 }
 
-*::-webkit-scrollbar-thumb:hover {
+html[data-scrollbar-active='true'] * {
+  scrollbar-width: thin;
+  scrollbar-color: #272d40 transparent;
+}
+
+html[data-scrollbar-active='true'] *::-webkit-scrollbar-thumb {
+  background: #2b2b2b;
+}
+
+html[data-scrollbar-active='true'] *::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.6);
 }
 
