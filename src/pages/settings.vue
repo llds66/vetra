@@ -9,19 +9,19 @@
 
 <script setup lang="ts">
 import type { CloseBehavior } from '@/utils/desktop-preferences'
+import { disable as disableAutostart, enable as enableAutostart, isEnabled as isAutostartEnabled } from '@tauri-apps/plugin-autostart'
 import { openUrl } from '@tauri-apps/plugin-opener'
 
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { appConfig } from '@/config/app'
 import {
-
   getCloseBehavior,
   setCloseBehavior,
   syncCloseBehavior,
 } from '@/utils/desktop-preferences'
 
 const isAutoStart = ref(false)
-const isUpdate = ref(false)
+const isAutoStartLoading = ref(false)
 const closeBehavior = ref<CloseBehavior>(getCloseBehavior())
 const closeBehaviorOptions = computed(() => [
   {
@@ -38,11 +38,45 @@ async function openAuthorSite(url: string) {
   await openUrl(url)
 }
 
+async function syncAutostartState() {
+  try {
+    isAutoStart.value = await isAutostartEnabled()
+  }
+  catch (error) {
+    console.error('Failed to load autostart setting', error)
+    isAutoStart.value = false
+  }
+}
+
+async function handleAutoStartChange(value: boolean) {
+  isAutoStartLoading.value = true
+
+  try {
+    if (value)
+      await enableAutostart()
+    else
+      await disableAutostart()
+
+    isAutoStart.value = value
+  }
+  catch (error) {
+    console.error('Failed to update autostart setting', error)
+    await syncAutostartState()
+  }
+  finally {
+    isAutoStartLoading.value = false
+  }
+}
+
 async function handleCloseBehaviorChange(value: CloseBehavior) {
   closeBehavior.value = value
   setCloseBehavior(value)
   await syncCloseBehavior(value)
 }
+
+onMounted(() => {
+  void syncAutostartState()
+})
 </script>
 
 <template>
@@ -51,14 +85,11 @@ async function handleCloseBehaviorChange(value: CloseBehavior) {
       <n-card>
         <div class="flex items-center justify-between">
           <span>开机自启</span>
-          <n-switch v-model:value="isAutoStart" />
-        </div>
-      </n-card>
-
-      <n-card>
-        <div class="flex items-center justify-between">
-          <span>自动更新</span>
-          <n-switch v-model:value="isUpdate" />
+          <n-switch
+            :value="isAutoStart"
+            :loading="isAutoStartLoading"
+            @update:value="handleAutoStartChange"
+          />
         </div>
       </n-card>
       <n-card>

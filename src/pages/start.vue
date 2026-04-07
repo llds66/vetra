@@ -68,6 +68,7 @@ function toUrl(url: string) {
     </n-card>
     <n-card title="变化" class="mt-5">
       <n-timeline>
+        <n-timeline-item type="info" title="新增开始自启功能" time="2026年4月7日 16:57" />
         <n-timeline-item type="info" title="支持关闭与托盘最小化配置" time="2026年4月2日 16:49" />
         <n-timeline-item type="info" title="项目命名为 Vetra" time="2026年3月28日 18:03" />
         <n-timeline-item type="success" title="项目初始化" time="2026年3月28日 17:51" line-type="dashed" />

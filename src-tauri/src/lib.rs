@@ -1,5 +1,4 @@
 use std::sync::atomic::{AtomicBool, Ordering};
-
 use tauri::{
     menu::{Menu, MenuItem},
     tray::{MouseButton, MouseButtonState, TrayIconBuilder, TrayIconEvent},
@@ -37,6 +36,7 @@ pub fn run() {
             is_quitting: AtomicBool::new(false),
             close_to_tray_enabled: AtomicBool::new(false),
         })
+        .plugin(tauri_plugin_autostart::Builder::new().build())
         .plugin(tauri_plugin_opener::init())
         .invoke_handler(tauri::generate_handler![set_close_to_tray_enabled])
         .setup(|app| {
@@ -45,7 +45,8 @@ pub fn run() {
                 .expect("main window not found");
             let _ = apply_mica(&window, None);
 
-            let show_window = MenuItem::with_id(app, SHOW_WINDOW_MENU_ID, "显示主窗口", true, None::<&str>)?;
+            let show_window =
+                MenuItem::with_id(app, SHOW_WINDOW_MENU_ID, "显示主窗口", true, None::<&str>)?;
             let quit_app = MenuItem::with_id(app, QUIT_APP_MENU_ID, "退出", true, None::<&str>)?;
             let tray_menu = Menu::with_items(app, &[&show_window, &quit_app])?;
 
