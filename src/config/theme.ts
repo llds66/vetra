@@ -3,6 +3,8 @@ import type { GlobalThemeOverrides } from 'naive-ui'
 export const appThemeOverrides: GlobalThemeOverrides = {
   common: {
     baseColor: '#111418',
+    fontFamily: '"Smiley Sans", "Microsoft YaHei", "PingFang SC", sans-serif',
+    fontFamilyMono: '"Cascadia Mono", "JetBrains Mono", "SFMono-Regular", monospace',
     bodyColor: 'rgba(17, 20, 24, 0.72)',
     cardColor: 'rgba(255, 255, 255, 0.06)',
     modalColor: 'rgba(24, 28, 34, 0.96)',
@@ -27,22 +29,7 @@ export const appThemeOverrides: GlobalThemeOverrides = {
     infoColor: 'rgba(255, 255, 255, 0.9)',
   },
   Switch: {
-    railColorActive: 'rgba(255, 255, 255, 0.72)',
-  },
-  Menu: {
-    itemColorHover: 'rgba(255, 255, 255, 0.14)',
-    itemColorActive: 'rgba(255, 255, 255, 0.14)',
-    itemColorActiveHover: 'rgba(255, 255, 255, 0.14)',
-    itemColorHoverHorizontal: 'rgba(255, 255, 255, 0.14)',
-    itemColorActiveHorizontal: 'rgba(255, 255, 255, 0.14)',
-    itemColorActiveHoverHorizontal: 'rgba(255, 255, 255, 0.14)',
-    itemTextColorHorizontal: '#FFFFFF',
-    itemTextColorHoverHorizontal: '#FFFFFF',
-    itemTextColorActiveHorizontal: '#FFFFFF',
-    itemTextColorActiveHoverHorizontal: '#FFFFFF',
-    itemTextColorChildActiveHorizontal: '#FFFFFF',
-    itemTextColorChildActiveHoverHorizontal: '#FFFFFF',
-    borderColorHorizontal: '#00000000',
+    railColorActive: 'rgba(255, 255, 255, 0.8)',
   },
   Card: {
     borderRadius: '10px',
