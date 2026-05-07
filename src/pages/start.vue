@@ -36,25 +36,15 @@ function toUrl(url: string) {
       <div class="">
         <div class="flex gap-2">
           <n-button>按钮</n-button>
-          <n-button type="tertiary">
-            按钮
-          </n-button>
-          <n-button type="primary">
-            按钮
-          </n-button>
+          <n-button type="tertiary"> 按钮 </n-button>
+          <n-button type="primary"> 按钮 </n-button>
         </div>
         <n-divider />
         <div class="flex gap-2">
           <n-tag> 标签 </n-tag>
-          <n-tag type="success">
-            标签
-          </n-tag>
-          <n-tag type="warning">
-            标签
-          </n-tag>
-          <n-tag type="error">
-            标签
-          </n-tag>
+          <n-tag type="success"> 标签 </n-tag>
+          <n-tag type="warning"> 标签 </n-tag>
+          <n-tag type="error"> 标签 </n-tag>
         </div>
         <n-divider />
         <n-slider :step="1" />
@@ -73,7 +63,12 @@ function toUrl(url: string) {
         <n-timeline-item type="info" title="新增开始自启功能" time="2026年4月7日" />
         <n-timeline-item type="info" title="支持关闭与托盘最小化配置" time="2026年4月2日" />
         <n-timeline-item type="info" title="项目命名为 Vetra" time="2026年3月28日" />
-        <n-timeline-item type="success" title="项目初始化" time="2026年3月28日" line-type="dashed" />
+        <n-timeline-item
+          type="success"
+          title="项目初始化"
+          time="2026年3月28日"
+          line-type="dashed"
+        />
       </n-timeline>
     </n-card>
   </div>

@@ -1,8 +1,8 @@
 {
   "name": "vetra",
-  "type": "module",
   "version": "0.2.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "windows:dev": "tauri dev",
     "windows:build": "tauri build",
@@ -10,8 +10,8 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "tauri": "tauri",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "fmt": "oxfmt",
+    "fmt-src": "oxfmt src/"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.10.1",
@@ -22,12 +22,11 @@
     "vue-router": "^5.0.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^7.7.3",
     "@iconify/json": "^2.2.456",
     "@tauri-apps/cli": "^2.10.1",
     "@vitejs/plugin-vue": "^6.0.5",
-    "eslint": "^10.1.0",
     "naive-ui": "^2.44.1",
+    "oxfmt": "^0.48.0",
     "typescript": "~5.9.3",
     "unocss": "^66.6.7",
     "unplugin-auto-import": "^21.0.0",

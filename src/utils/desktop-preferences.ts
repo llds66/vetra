@@ -11,14 +11,11 @@ const DEFAULT_CLOSE_BEHAVIOR: CloseBehavior = 'exit'
 
 export function getCloseBehavior(): CloseBehavior {
   const rawValue = window.localStorage.getItem(CLOSE_BEHAVIOR_KEY)
-  if (rawValue === 'exit' || rawValue === 'tray')
-    return rawValue
+  if (rawValue === 'exit' || rawValue === 'tray') return rawValue
 
   const legacyValue = window.localStorage.getItem(LEGACY_CLOSE_TO_TRAY_KEY)
-  if (legacyValue === 'true')
-    return 'tray'
-  if (legacyValue === 'false')
-    return 'exit'
+  if (legacyValue === 'true') return 'tray'
+  if (legacyValue === 'false') return 'exit'
 
   return DEFAULT_CLOSE_BEHAVIOR
 }
@@ -32,8 +29,7 @@ export function setCloseBehavior(value: CloseBehavior) {
 export async function syncCloseBehavior(value = getCloseBehavior()) {
   try {
     await invoke('set_close_to_tray_enabled', { enabled: value === 'tray' })
-  }
-  catch (error) {
+  } catch (error) {
     console.error('Failed to sync close behavior setting', error)
   }
 }

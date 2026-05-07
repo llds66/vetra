@@ -46,7 +46,6 @@
 按改动范围执行对应命令：
 
 ```bash
-pnpm run lint
 pnpm run build
 pnpm run windows:dev
 ```

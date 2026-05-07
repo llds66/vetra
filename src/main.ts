@@ -43,9 +43,7 @@ async function bootstrap() {
   setupScrollbarVisibility()
 
   const app = createApp(App)
-  app
-    .use(router)
-    .mount('#app')
+  app.use(router).mount('#app')
 }
 
 void bootstrap()

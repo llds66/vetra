@@ -28,8 +28,6 @@ pnpm i
 pnpm run windows:dev
 # 打包
 pnpm run windows:build
-# 代码检查
-pnpm run lint
 ```
 
 ## 页面路由元数据
@@ -49,4 +47,5 @@ pnpm run lint
 ```
 
 ## 致谢
+
 [**Linux.Do 社区**](https://linux.do) (真诚 、友善 、团结 、专业)

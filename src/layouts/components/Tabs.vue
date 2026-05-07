@@ -58,12 +58,7 @@ const activeKey = computed(() => {
 
 <template>
   <div class="tabs-header-nav">
-    <n-menu
-      class="tabs-menu"
-      mode="horizontal"
-      :value="activeKey"
-      :options="menuOptions"
-    />
+    <n-menu class="tabs-menu" mode="horizontal" :value="activeKey" :options="menuOptions" />
     <button type="button" aria-label="打开设置" class="settings-btn" @click="appRouter.push({ name: 'Settings' })">
       <div class="settings-icon" aria-hidden="true" />
       <span>设置</span>

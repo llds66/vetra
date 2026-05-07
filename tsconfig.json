@@ -2,32 +2,17 @@
   "compilerOptions": {
     "target": "ES2020",
     "jsx": "preserve",
-    "lib": [
-      "ES2020",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "useDefineForClassFields": true,
-    "baseUrl": "./",
     "module": "ESNext",
     /* Bundler mode */
     "moduleResolution": "bundler",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@composables/*": [
-        "src/common/composables/*"
-      ]
+      "@/*": ["./src/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@components/*": ["./src/components/*"],
+      "@composables/*": ["./src/common/composables/*"]
     },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
@@ -45,16 +30,8 @@
       "path": "./tsconfig.node.json"
     }
   ],
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue"
-  ],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "vueCompilerOptions": {
-    "plugins": [
-      "vue-router/volar/sfc-route-blocks",
-      "vue-router/volar/sfc-typed-router"
-    ]
+    "plugins": ["vue-router/volar/sfc-route-blocks", "vue-router/volar/sfc-typed-router"]
   }
 }

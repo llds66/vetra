@@ -19,18 +19,18 @@ const router = useRouter()
 <template>
   <div class="flex flex-col h-full items-center justify-center">
     <div class="flex gap-2 items-center justify-center">
-      <img class="h-12 w-12 object-contain" src="/logo.png" alt="Vetra Logo">
-      <div class="text-4xl font-500">
-        Vetra
-      </div>
+      <img class="h-12 w-12 object-contain" src="/logo.png" alt="Vetra Logo" />
+      <div class="text-4xl font-500">Vetra</div>
     </div>
-    <div class="text-stone-300 mt-10">
-      Vue3 + Tauri2 + Naive UI
-    </div>
-    <div class="text-stone-300 mt-3">
-      Startup Template
-    </div>
-    <n-button round class="mt-10" icon-placement="right" type="primary" @click="router.push('/start')">
+    <div class="text-stone-300 mt-10">Vue3 + Tauri2 + Naive UI</div>
+    <div class="text-stone-300 mt-3">Startup Template</div>
+    <n-button
+      round
+      class="mt-10"
+      icon-placement="right"
+      type="primary"
+      @click="router.push('/start')"
+    >
       <template #icon>
         <div class="i-mdi-menu-right" />
       </template>

@@ -19,12 +19,10 @@ function getTabRoutes(items: readonly RouteRecordRaw[]): RouteRecordRaw[] {
 
 const routeOrderMap = new Map(
   getTabRoutes(routes).flatMap((item) => {
-    if (typeof item.name !== 'string')
-      return []
+    if (typeof item.name !== 'string') return []
 
-    const order = typeof item.meta?.tabOrder === 'number'
-      ? item.meta.tabOrder
-      : Number.MAX_SAFE_INTEGER
+    const order =
+      typeof item.meta?.tabOrder === 'number' ? item.meta.tabOrder : Number.MAX_SAFE_INTEGER
 
     return [[item.name, order] as const]
   }),
@@ -46,11 +44,12 @@ watch(
   () => route.fullPath,
   () => {
     const nextRouteOrder = getRouteOrder()
-    navigationDirection.value = nextRouteOrder === previousRouteOrder.value
-      ? 0
-      : nextRouteOrder > previousRouteOrder.value
-        ? 1
-        : -1
+    navigationDirection.value =
+      nextRouteOrder === previousRouteOrder.value
+        ? 0
+        : nextRouteOrder > previousRouteOrder.value
+          ? 1
+          : -1
     previousRouteOrder.value = nextRouteOrder
   },
 )

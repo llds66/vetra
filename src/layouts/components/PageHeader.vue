@@ -27,10 +27,10 @@ const router = useRouter()
 
 <style scoped>
 .hearder_container {
-    --uno: 'mb-2 gap-3 grid grid-cols-[36px_minmax(0,1fr)_36px] items-center '
+  --uno: 'mb-2 gap-3 grid grid-cols-[36px_minmax(0,1fr)_36px] items-center ';
 }
 
 .header_btn {
-    --uno: 'text-white flex h-9 w-9 items-center justify-center rounded-full cursor-pointer hover:bg-white/14'
+  --uno: 'text-white flex h-9 w-9 items-center justify-center rounded-full cursor-pointer hover:bg-white/14';
 }
 </style>
